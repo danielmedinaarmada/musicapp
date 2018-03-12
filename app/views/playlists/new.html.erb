@@ -1,0 +1,19 @@
+<%= form_for(@playlist) do |f| %>
+    <% if @playlist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@playlist.errors.count, "error") %> prohibited this playlist from being saved:</h2>
+
+      <ul>
+      <% @playlist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :number_of_votes %>
+    <%= f.text_field :number_of_votes %>
+    <%= f.submit %>
+<% end%>
