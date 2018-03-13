@@ -46,3 +46,7 @@ group :development do
 end
 
 gem 'figaro'
+
+gem 'rspotify'
+
+gem 'devise'
