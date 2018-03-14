@@ -5,17 +5,13 @@
 #   gem 'sqlite3'
 #
 default: &default
-  #adapter: sqlite3
-  adapter: postgresql
+  adapter: sqlite3
   #pool: 5
   timeout: 5000
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
   <<: *default
-  #database: db/development.sqlite3
-  database: musicapp_dev
+  database: db/development.sqlite3
   username: 'danny'
 
   #The password associated with the postgres role (username).
@@ -33,4 +29,4 @@ production:
   #<<: *default
   #database: db/production.sqlite3
   database: musicapp_prod
-   url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV['DATABASE_URL'] %>
