@@ -5,17 +5,16 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: sqlite3
+  #adapter: sqlite3
+  adapter: postgresql
   #pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: db/development.sqlite3
-  username: 'danny'
+  #database: db/development.sqlite3
+  database: musicapp_dev
 
-  #The password associated with the postgres role (username).
-  password: <%= ENV['psql_password'] %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,4 +28,3 @@ production:
   #<<: *default
   #database: db/production.sqlite3
   database: musicapp_prod
-  url: <%= ENV['DATABASE_URL'] %>
